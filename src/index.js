@@ -3,9 +3,11 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
+const router = require("./routes");
 
 app.use(express.json())
 app.use(express)
+app.use(router);
 
 mongoose.connect(process.env.DATABASE_URL)
   .then(() => {
